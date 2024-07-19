@@ -17,7 +17,7 @@ import { serveStatic } from 'frog/serve-static'
 
 const baseUrl = "https://warpcast.com/~/compose";
 const text = "Grow your 🍌 by playing [ Banana Tap ↑ ]\n\nFrame by @0x94t3z.eth";
-const embedUrl = "https://bananas.vercel.app/api";
+const embedUrl = "https://bananas-tap.vercel.app/api";
 
 const CAST_INTENS = `${baseUrl}?text=${encodeURIComponent(text)}&embeds[]=${encodeURIComponent(embedUrl)}`;
 
@@ -111,7 +111,7 @@ app.frame('/play', (c) => {
 
   const baseUrl = "https://warpcast.com/~/compose";
   const text = `I just grow my 🍌 to ${price} by playing [ Banana Tap ↑ ]\n\nFrame by @0x94t3z.eth`;
-  const embedUrl = `https://bananas.vercel.app/api/share/${username}/${price}`;
+  const embedUrl = `https://bananas-tap.vercel.app/api/share/${username}/${price}`;
 
   const SHARE_BY_USER = `${baseUrl}?text=${encodeURIComponent(text)}&embeds[]=${encodeURIComponent(embedUrl)}`;
 
