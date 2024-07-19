@@ -110,7 +110,7 @@ app.frame('/play', (c) => {
   const price = state.earnings.toFixed(2)
 
   const baseUrl = "https://warpcast.com/~/compose";
-  const text = `I just grow my 🍌 to ${price} by playing [ Banana Tap ↑ ]\n\nFrame by @0x94t3z.eth`;
+  const text = `I just grew my 🍌 to ${price} by playing [ Banana Tap ↑ ]\n\nFrame by @0x94t3z.eth`;
   const embedUrl = `https://bananas-tap.vercel.app/api/share/${username}/${price}`;
 
   const SHARE_BY_USER = `${baseUrl}?text=${encodeURIComponent(text)}&embeds[]=${encodeURIComponent(embedUrl)}`;
