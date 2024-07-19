@@ -11,8 +11,8 @@ import {
 
 
 // Uncomment this packages to tested on local server
-import { devtools } from 'frog/dev'
-import { serveStatic } from 'frog/serve-static'
+// import { devtools } from 'frog/dev'
+// import { serveStatic } from 'frog/serve-static'
 
 
 const baseUrl = "https://warpcast.com/~/compose";
@@ -195,7 +195,7 @@ app.frame('/share/:username/:price', (c) => {
 
 
 // Uncomment for local server testing
-devtools(app, { serveStatic });
+// devtools(app, { serveStatic });
 
 
 export const GET = handle(app)
