@@ -8,11 +8,17 @@ import {
   Spacer, 
   vars 
 } from "../lib/ui.js";
+import {StackClient} from "@stackso/js-core";
+import dotenv from 'dotenv';
 
 
 // Uncomment this packages to tested on local server
 // import { devtools } from 'frog/dev'
 // import { serveStatic } from 'frog/serve-static'
+
+
+// Load environment variables from .env file
+dotenv.config();
 
 
 const baseUrl = "https://warpcast.com/~/compose";
@@ -25,6 +31,14 @@ const CAST_INTENS = `${baseUrl}?text=${encodeURIComponent(text)}&embeds[]=${enco
 type State = {
   earnings: number;
 };
+
+
+// Initialize the client
+const stack = new StackClient({
+  // Get your API key and point system id from the Stack dashboard (stack.so)
+  apiKey: process.env.STACK_API_KEY || '', 
+  pointSystemId: parseInt(process.env.STACK_POINT_SYSTEM_ID || ''),
+});
 
 
 export const app = new Frog<{ State: State }>({
@@ -96,13 +110,24 @@ app.frame('/', (c) => {
 });
 
 
-app.frame('/play', (c) => {
-  const { username } = c.var.interactor || {}
+app.frame('/play', async(c) => {
+  const { username, verifiedAddresses } = c.var.interactor || {}
   const { deriveState } = c;
+
+  const eth_address = verifiedAddresses?.ethAddresses[0] || '';
 
   const state = deriveState((previousState) => {
     if (c.buttonValue === 'tap') {
       previousState.earnings += 0.1;
+
+      const price = previousState.earnings.toFixed(2);
+
+      stack.track(`${price}`, {
+        points: 10,
+        account: eth_address,
+        uniqueId: eth_address
+      });
+      
     }
     return;
   });
