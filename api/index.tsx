@@ -46,11 +46,11 @@ export const app = new Frog<{ State: State }>({
   basePath: '/api',
   ui: { vars },
   title: 'Banana Tap ↑',
-  imageAspectRatio: '1:1',
-  imageOptions: {
-    height: 1024,
-    width: 1024,
-  },
+  // imageAspectRatio: '1:1',
+  // imageOptions: {
+  //   height: 1024,
+  //   width: 1024,
+  // },
   initialState: {
     earnings: 0,
   },
@@ -64,6 +64,46 @@ export const app = new Frog<{ State: State }>({
     features: ['interactor', 'cast'],
   }),
 )
+
+
+// For Banner
+// app.frame('/', (c) => {
+
+//   return c.res({
+//     image: (
+//       <Box
+//           grow
+//           alignVertical="center"
+//           alignHorizontal="center"
+//           backgroundColor="bg"
+//           padding="32"
+//           textAlign="center"
+//           height="100%"
+//         >
+
+//           <Text align="center" weight="600" color="white" size="24">
+//             BANANA TAP ↑
+//           </Text>
+
+//           <Spacer size="32" />
+            
+//           <Image 
+//             src="/images/bananas_original.png" 
+//             height="160"
+//             />
+          
+//           <Spacer size="10" />
+
+//           <Text align="center" weight="600" color="white" size="32">
+//             [ Top Clickers ]
+//           </Text>
+
+//           <Spacer size="48" />
+
+//         </Box>
+//     ),
+//   });
+// });
 
 
 app.frame('/', (c) => {
@@ -105,6 +145,7 @@ app.frame('/', (c) => {
     ),
     intents: [
       <Button action="/play">Start</Button>,
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
     ],
   });
 });
@@ -213,7 +254,8 @@ app.frame('/share/:username/:price', (c) => {
         </Box>
     ),
     intents: [
-      <Button action="/">I want to grow my 🍌 tho!</Button>,
+      <Button action="/">Play 🍌</Button>,
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
     ],
   });
 });
