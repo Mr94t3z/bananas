@@ -46,11 +46,11 @@ export const app = new Frog<{ State: State }>({
   basePath: '/api',
   ui: { vars },
   title: 'Banana Tap ↑',
-  // imageAspectRatio: '1:1',
-  // imageOptions: {
-  //   height: 1024,
-  //   width: 1024,
-  // },
+  imageAspectRatio: '1:1',
+  imageOptions: {
+    height: 1024,
+    width: 1024,
+  },
   initialState: {
     earnings: 0,
   },
