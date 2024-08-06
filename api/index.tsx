@@ -47,6 +47,14 @@ export const app = new Frog<{ State: State }>({
   ui: { vars },
   title: 'Banana Tap ↑',
   imageAspectRatio: '1:1',
+  hub: {
+    apiUrl: "https://hubs.airstack.xyz",
+    fetchOptions: {
+      headers: {
+        "x-airstack-hubs": process.env.AIRSTACK_API_KEY || '',
+      }
+    }
+  },
   imageOptions: {
     height: 1024,
     width: 1024,
