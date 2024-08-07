@@ -8,7 +8,6 @@
     "deploy": "vercel"
   },
   "dependencies": {
-    "@paywithglide/glide-js": "^0.9.7",
     "@stackso/js-core": "^0.3.3",
     "dotenv": "^16.4.5",
     "frog": "latest",
