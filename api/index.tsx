@@ -13,8 +13,8 @@ import dotenv from 'dotenv';
 
 
 // Uncomment this packages to tested on local server
-import { devtools } from 'frog/dev'
-import { serveStatic } from 'frog/serve-static'
+// import { devtools } from 'frog/dev'
+// import { serveStatic } from 'frog/serve-static'
 
 
 // Load environment variables from .env file
@@ -153,7 +153,8 @@ app.frame('/', (c) => {
     ),
     intents: [
       <Button action="/play">Start</Button>,
-      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
+      // <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-x-moxie">Leaderboard</Button.Link>, // Banana Tap x Moxie
     ],
   });
 });
@@ -263,14 +264,14 @@ app.frame('/share/:username/:price', (c) => {
     ),
     intents: [
       <Button action="/">Play 🍌</Button>,
-      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-x-moxie">Leaderboard</Button.Link>,
     ],
   });
 });
 
 
 // Uncomment for local server testing
-devtools(app, { serveStatic });
+// devtools(app, { serveStatic });
 
 
 export const GET = handle(app)
