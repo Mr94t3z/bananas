@@ -153,8 +153,7 @@ app.frame('/', (c) => {
     ),
     intents: [
       <Button action="/play">Start</Button>,
-      // <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
-      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-x-moxie">Leaderboard</Button.Link>, // Banana Tap x Moxie
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
     ],
   });
 });
@@ -264,7 +263,7 @@ app.frame('/share/:username/:price', (c) => {
     ),
     intents: [
       <Button action="/">Play 🍌</Button>,
-      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-x-moxie">Leaderboard</Button.Link>,
+      <Button.Link href="https://www.stack.so/leaderboard/banana-tap-leaderboard">Leaderboard</Button.Link>,
     ],
   });
 });
